@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch Ads to Earn</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- MONETAG_SCRIPT_HERE -->
+  <!-- Example: <script src="//oplvl.com/api?zoneid=ZONE_ID"></script> -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Balance card -->
+  <div class="card">
+    <div class="balance-label">Your Balance</div>
+    <div class="balance-amount" id="balance">₱0.00</div>
+    <div class="balance-sub" id="total-earned">Total earned: ₱0.00</div>
+  </div>
+
+  <!-- Earning toggle + watch ad button -->
+  <div class="card">
+    <div class="toggle-row">
+      <span class="toggle-label">Earning enabled</span>
+      <label class="switch">
+        <input type="checkbox" id="earning-toggle" checked />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <button class="btn" id="watch-btn">Watch Ad to Earn</button>
+    <div id="ad-msg"></div>
+  </div>
+
+  <div id="load-msg"></div>
+
+  <!-- Withdraw -->
+  <div class="card">
+    <button class="btn secondary" id="open-withdraw-btn">Withdraw</button>
+
+    <div id="withdraw-form">
+      <div style="height:14px"></div>
+      <div class="form-group">
+        <label>Amount (₱)</label>
+        <input type="number" id="w-amount" placeholder="50.00" min="50" step="0.01" />
+      </div>
+      <div class="form-group">
+        <label>Channel</label>
+        <select id="w-channel">
+          <option value="GCASH">GCash</option>
+          <option value="MAYA">Maya</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number (09XXXXXXXXX)</label>
+        <input type="tel" id="w-number" placeholder="09XXXXXXXXX" maxlength="11" />
+      </div>
+      <div class="form-group">
+        <label>Full Name (as registered)</label>
+        <input type="text" id="w-name" placeholder="Juan Dela Cruz" />
+      </div>
+      <button class="btn" id="withdraw-submit-btn">Submit Withdrawal</button>
+      <div id="withdraw-msg"></div>
+    </div>
+  </div>
+
+  <!-- Withdrawal history -->
+  <div class="card">
+    <div class="section-title">Withdrawal History</div>
+    <div id="withdrawals-list">
+      <p class="empty">Loading…</p>
+    </div>
+  </div>
+
+  <!-- Confirmation modal -->
+  <div id="modal-overlay">
+    <div class="modal">
+      <h3>Confirm Withdrawal</h3>
+      <p id="modal-text"></p>
+      <div class="modal-btns">
+        <button class="btn secondary" id="modal-cancel">Cancel</button>
+        <button class="btn" id="modal-confirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
